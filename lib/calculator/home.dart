@@ -45,7 +45,7 @@ class _Calculator_stateState extends State<Calculator_state> {
         input = output;
         hideInput = true;
         outputSize = 52;
-     }
+      }
     } else {
       input = input + value;
       hideInput = false;
@@ -91,7 +91,7 @@ class _Calculator_stateState extends State<Calculator_state> {
           Row(
             children: [
               button(
-                  text: "AC",
+                  text: "Ac",
                   buttonBgColor: operatorColor,
                   tColor: orangeColor),
               button(
@@ -142,22 +142,32 @@ class _Calculator_stateState extends State<Calculator_state> {
     );
   }
 
-  Widget button({text, tColor = Colors.white, buttonBgColor = buttonColor}) =>
+  Widget button(
+      {text,
+        tColor = Colors.white,
+        buttonBgColor = buttonColor}
+      ) =>
       Expanded(
-          child: Container(
-        margin: EdgeInsets.all(8),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-              backgroundColor: buttonBgColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12)),
-              padding: EdgeInsets.all(22)),
-          onPressed: () => onButtonClik(text),
-          child: Text(
-            text,
-            style: TextStyle(
-                fontSize: 18, color: tColor, fontWeight: FontWeight.bold),
+        child: Container(
+          margin: EdgeInsets.all(8),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: buttonBgColor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                ),
+                padding: EdgeInsets.all(22),
+            ),
+            onPressed: () => onButtonClik(text),
+            child: Text(
+              text,
+              style: TextStyle(
+                  fontSize: 18,
+                  color: tColor,
+                  fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ),
-      ));
+      );
 }
