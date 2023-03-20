@@ -1,4 +1,4 @@
-# ecom
+# calculator
 
 A new Flutter project.
 
